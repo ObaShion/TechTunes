@@ -15,6 +15,8 @@
 		9B69604E2C91D3FC00B39295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B69604C2C91D3FC00B39295 /* LaunchScreen.storyboard */; };
 		9B6960572C91D57100B39295 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6960562C91D57100B39295 /* HomeViewController.swift */; };
 		9B69605B2C91D64B00B39295 /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69605A2C91D64B00B39295 /* MusicModel.swift */; };
+		9B69605D2C91DC9A00B39295 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69605C2C91DC9A00B39295 /* PlayerViewController.swift */; };
+		9B69605F2C91EDCD00B39295 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69605E2C91EDCD00B39295 /* CustomSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		9B69604F2C91D3FC00B39295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6960562C91D57100B39295 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9B69605A2C91D64B00B39295 /* MusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
+		9B69605C2C91DC9A00B39295 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		9B69605E2C91EDCD00B39295 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				9B6960562C91D57100B39295 /* HomeViewController.swift */,
+				9B69605C2C91DC9A00B39295 /* PlayerViewController.swift */,
+				9B69605E2C91EDCD00B39295 /* CustomSlider.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,10 +175,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B6960462C91D3FB00B39295 /* ViewController.swift in Sources */,
+				9B69605F2C91EDCD00B39295 /* CustomSlider.swift in Sources */,
 				9B6960422C91D3FB00B39295 /* AppDelegate.swift in Sources */,
 				9B6960442C91D3FB00B39295 /* SceneDelegate.swift in Sources */,
 				9B69605B2C91D64B00B39295 /* MusicModel.swift in Sources */,
 				9B6960572C91D57100B39295 /* HomeViewController.swift in Sources */,
+				9B69605D2C91DC9A00B39295 /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
