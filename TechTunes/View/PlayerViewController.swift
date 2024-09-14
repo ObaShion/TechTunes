@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import SDWebImage
 
 class PlayerViewController: UIViewController {
     
@@ -15,8 +16,6 @@ class PlayerViewController: UIViewController {
     @IBOutlet var seekBar: UISlider!
     
     @IBOutlet var playButton: UIButton!
-    
-    @IBOutlet var currentTimeLabel: UILabel!
     
     //AVPlayer
     var player: AVPlayer?
@@ -28,7 +27,11 @@ class PlayerViewController: UIViewController {
     
     //曲のURL
     //String
-    let url = URL(string: "https://s3.amazonaws.com/kargopolov/kukushka.mp3")
+    var url: URL!
+    
+    //カバーアート
+    //UIImage
+    var coverArtURL: String!
     
     //再生時間
     var duration: TimeInterval = 0.0
@@ -44,17 +47,27 @@ class PlayerViewController: UIViewController {
         // Do any additional setup after loading the view.
         //シークバーの初期化
         seekBar.value = 0.0
+        //シークバーを摘んだ時の動作
         seekBar.addTarget(
             self,
             action: #selector(didStartDragSeekBar),
             for: .touchDown
         )
-        
+        //シークバーを移動させ終わった後の動作
         seekBar.addTarget(
             self,
             action: #selector(didEndDragSeekBar),
             for: .touchUpInside
         )
+        let url:URL = URL(string: coverArtURL)!
+        imageView.sd_setImage(with: url)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("dismiss")
+        url = URL(string: "")
+        coverArtURL = ""
     }
     
     /// Adds an observer of the player timing.
@@ -70,6 +83,12 @@ class PlayerViewController: UIViewController {
             
             //シークバーのアップデート
             seekBar.value = Float(currentTime/duration)
+            if currentTime == duration {
+                player?.pause()
+                playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                print("stop")
+                removePeriodicTimeObserver()
+            }
         }
     }
     
@@ -91,7 +110,7 @@ class PlayerViewController: UIViewController {
             }
             player?.play()
             playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-            print("play!")
+            print("play")
             addPeriodicTimeObserver()
         } else {
             player?.pause()
@@ -101,25 +120,68 @@ class PlayerViewController: UIViewController {
         }
     }
     
+    //15秒スキップ
+    @IBAction func forward() {
+        guard let player = player else { return }
+        //再生を停止
+        player.pause()
+        //現在の再生時間を取得
+        let currentTime: CMTime = player.currentTime()
+        //CMTime:15秒
+        let forwardTime: CMTime = CMTimeMake(value: 150, timescale: 10)
+        //現在の再生時間+15秒
+        let newTime: CMTime = (currentTime + forwardTime)
+        //00:00以下になっていた場合、強制的に00:00に設定
+//        if newTime <= CMTimeMake(value: 0, timescale: 0) {
+//            newTime = CMTimeMake(value: 0, timescale: 0)
+//        }
+        //15秒スキップ先に設定
+        player.seek(to: newTime)
+        //再生を再開
+        player.play()
+    }
     
+    //15秒巻き戻し
+    @IBAction func backward() {
+        guard let player = player else { return }
+        //再生を停止
+        player.pause()
+        //現在の再生時間を取得
+        let currentTime: CMTime = player.currentTime()
+        //CMTime:15秒
+        let forwardTime: CMTime = CMTimeMake(value: 150, timescale: 10)
+        //現在の再生時間+15秒
+        let newTime: CMTime = (currentTime - forwardTime)
+        //00:00以下になっていた場合、強制的に00:00に設定
+//        if newTime <= CMTimeMake(value: 0, timescale: 0) {
+//            newTime = CMTimeMake(value: 0, timescale: 0)
+//        }
+        //15秒スキップ先に設定
+        player.seek(to: newTime)
+        //再生を再開
+        player.play()
+    }
+    
+    //シークバーを摘んだ時の動作
     @objc private func didStartDragSeekBar() {
         player?.pause()
         playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
         print("stop")
         removePeriodicTimeObserver()
-        
     }
     
+    //シークバーを移動させ終わった後の動作
     @objc private func didEndDragSeekBar(_ sender: UISlider) {
         guard let player = player else { return }
-        // シークバーの値から再生時間を計算
+        //シークバーの値から再生時間を計算
         let seekTime = CMTime(seconds: Double(sender.value) * duration, preferredTimescale: 600)
+        //再生時間を指定
         player.seek(to: seekTime)
+        //再生
         player.play()
         playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-        print("play!")
+        print("play")
         addPeriodicTimeObserver()
-        
     }
 }
 

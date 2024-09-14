@@ -8,13 +8,13 @@
 import Foundation
 
 class Music {
-    var coverArtURL: String
+    var coverArt: String
     var musicURL: String
     var title: String
     var detail: String
     
     init(coverArtURL: String, musicURL: String, title: String, detail: String) {
-        self.coverArtURL = coverArtURL
+        self.coverArt = coverArtURL
         self.musicURL = musicURL
         self.title = title
         self.detail = detail
