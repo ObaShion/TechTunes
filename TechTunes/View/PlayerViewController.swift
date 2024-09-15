@@ -17,6 +17,10 @@ class PlayerViewController: UIViewController {
     
     @IBOutlet var playButton: UIButton!
     
+    @IBOutlet var backgroundImageView: UIImageView!
+    
+    @IBOutlet var titleLabel: UILabel!
+    
     //AVPlayer
     var player: AVPlayer?
     
@@ -32,6 +36,8 @@ class PlayerViewController: UIViewController {
     //カバーアート
     //UIImage
     var coverArtURL: String!
+    
+    var titleText: String!
     
     //再生時間
     var duration: TimeInterval = 0.0
@@ -61,6 +67,37 @@ class PlayerViewController: UIViewController {
         )
         let url:URL = URL(string: coverArtURL)!
         imageView.sd_setImage(with: url)
+        
+        backgroundImageView.sd_setImage(with: url)
+        
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = backgroundImageView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        backgroundImageView.addSubview(blurEffectView)
+        
+        titleLabel.text = titleText
+        
+        playButton.layer.cornerRadius = 20
+        
+        playButton.layer.borderWidth = 1
+        
+        playButton.layer.borderColor = UIColor.gray.cgColor
+        
+        imageView.layer.cornerRadius = 10
+        
+        imageView.layer.shadowColor = UIColor.black.cgColor
+        imageView.layer.shadowOpacity = 1
+        imageView.layer.shadowRadius = 20
+        imageView.layer.shadowOffset = CGSize(width: 4, height: 4)
+        
+        imageView.layer.borderWidth = 1
+        
+        imageView.layer.borderColor = UIColor.gray.cgColor
+
+        
+
         
     }
     

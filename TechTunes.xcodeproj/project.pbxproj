@@ -17,6 +17,7 @@
 		9B69605B2C91D64B00B39295 /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69605A2C91D64B00B39295 /* MusicModel.swift */; };
 		9B69605D2C91DC9A00B39295 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69605C2C91DC9A00B39295 /* PlayerViewController.swift */; };
 		9B69605F2C91EDCD00B39295 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69605E2C91EDCD00B39295 /* CustomSlider.swift */; };
+		9B7B1B402C9716BE00095C7A /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7B1B3F2C9716BE00095C7A /* CustomNavigationBar.swift */; };
 		9BC384072C928F7500ED96DC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9BC384062C928F7500ED96DC /* .gitignore */; };
 		9BC3840B2C928FD700ED96DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3840A2C928FD700ED96DC /* GoogleService-Info.plist */; };
 		9BC3840F2C92976F00ED96DC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC3840E2C92976F00ED96DC /* FirebaseAnalytics */; };
@@ -44,6 +45,8 @@
 		9BC3843C2C92D10F00ED96DC /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC3843B2C92D10F00ED96DC /* SDWebImage */; };
 		9BC3843E2C92D10F00ED96DC /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC3843D2C92D10F00ED96DC /* SDWebImageMapKit */; };
 		9BC384402C92D77900ED96DC /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3843F2C92D77900ED96DC /* UploadViewController.swift */; };
+		9BC384432C96EF6D00ED96DC /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC384412C96EF6D00ED96DC /* MusicTableViewCell.swift */; };
+		9BC384442C96EF6D00ED96DC /* MusicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BC384422C96EF6D00ED96DC /* MusicTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,9 +62,12 @@
 		9B69605A2C91D64B00B39295 /* MusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
 		9B69605C2C91DC9A00B39295 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		9B69605E2C91EDCD00B39295 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		9B7B1B3F2C9716BE00095C7A /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		9BC384062C928F7500ED96DC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9BC3840A2C928FD700ED96DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BC3843F2C92D77900ED96DC /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		9BC384412C96EF6D00ED96DC /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
+		9BC384422C96EF6D00ED96DC /* MusicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,10 +143,12 @@
 		9B6960552C91D54A00B39295 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9BC384452C96EF7D00ED96DC /* CustomTableViewCell */,
 				9B6960562C91D57100B39295 /* HomeViewController.swift */,
 				9B69605C2C91DC9A00B39295 /* PlayerViewController.swift */,
 				9BC3843F2C92D77900ED96DC /* UploadViewController.swift */,
 				9B69605E2C91EDCD00B39295 /* CustomSlider.swift */,
+				9B7B1B3F2C9716BE00095C7A /* CustomNavigationBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +166,15 @@
 				9B69605A2C91D64B00B39295 /* MusicModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9BC384452C96EF7D00ED96DC /* CustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9BC384412C96EF6D00ED96DC /* MusicTableViewCell.swift */,
+				9BC384422C96EF6D00ED96DC /* MusicTableViewCell.xib */,
+			);
+			path = CustomTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +268,7 @@
 				9BC384072C928F7500ED96DC /* .gitignore in Resources */,
 				9B69604E2C91D3FC00B39295 /* LaunchScreen.storyboard in Resources */,
 				9BC3840B2C928FD700ED96DC /* GoogleService-Info.plist in Resources */,
+				9BC384442C96EF6D00ED96DC /* MusicTableViewCell.xib in Resources */,
 				9B69604B2C91D3FC00B39295 /* Assets.xcassets in Resources */,
 				9B6960492C91D3FB00B39295 /* Main.storyboard in Resources */,
 			);
@@ -267,10 +285,12 @@
 				9BC384402C92D77900ED96DC /* UploadViewController.swift in Sources */,
 				9B69605F2C91EDCD00B39295 /* CustomSlider.swift in Sources */,
 				9B6960422C91D3FB00B39295 /* AppDelegate.swift in Sources */,
+				9B7B1B402C9716BE00095C7A /* CustomNavigationBar.swift in Sources */,
 				9B6960442C91D3FB00B39295 /* SceneDelegate.swift in Sources */,
 				9B69605B2C91D64B00B39295 /* MusicModel.swift in Sources */,
 				9B6960572C91D57100B39295 /* HomeViewController.swift in Sources */,
 				9B69605D2C91DC9A00B39295 /* PlayerViewController.swift in Sources */,
+				9BC384432C96EF6D00ED96DC /* MusicTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
