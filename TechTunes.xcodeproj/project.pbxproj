@@ -18,6 +18,7 @@
 		9B69605D2C91DC9A00B39295 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69605C2C91DC9A00B39295 /* PlayerViewController.swift */; };
 		9B69605F2C91EDCD00B39295 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69605E2C91EDCD00B39295 /* CustomSlider.swift */; };
 		9B7B1B402C9716BE00095C7A /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7B1B3F2C9716BE00095C7A /* CustomNavigationBar.swift */; };
+		9BB2F4BB2C98064700F9BD6A /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 9BB2F4BA2C98064700F9BD6A /* Gifu */; };
 		9BC384072C928F7500ED96DC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9BC384062C928F7500ED96DC /* .gitignore */; };
 		9BC3840B2C928FD700ED96DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3840A2C928FD700ED96DC /* GoogleService-Info.plist */; };
 		9BC3840F2C92976F00ED96DC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC3840E2C92976F00ED96DC /* FirebaseAnalytics */; };
@@ -83,6 +84,7 @@
 				9BC384292C92976F00ED96DC /* FirebaseFirestoreSwift in Frameworks */,
 				9BC384132C92976F00ED96DC /* FirebaseAnalyticsSwift in Frameworks */,
 				9BC384192C92976F00ED96DC /* FirebaseAuth in Frameworks */,
+				9BB2F4BB2C98064700F9BD6A /* Gifu in Frameworks */,
 				9BC3840F2C92976F00ED96DC /* FirebaseAnalytics in Frameworks */,
 				9BC384252C92976F00ED96DC /* FirebaseFirestore in Frameworks */,
 				9BC384112C92976F00ED96DC /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
@@ -218,6 +220,7 @@
 				9BC384382C92976F00ED96DC /* FirebaseStorageCombine-Community */,
 				9BC3843B2C92D10F00ED96DC /* SDWebImage */,
 				9BC3843D2C92D10F00ED96DC /* SDWebImageMapKit */,
+				9BB2F4BA2C98064700F9BD6A /* Gifu */,
 			);
 			productName = TechTunes;
 			productReference = 9B69603E2C91D3FB00B39295 /* TechTunes.app */;
@@ -250,6 +253,7 @@
 			packageReferences = (
 				9BC3840D2C92976F00ED96DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9BC3843A2C92D10F00ED96DC /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				9BB2F4B92C98064700F9BD6A /* XCRemoteSwiftPackageReference "gifu" */,
 			);
 			productRefGroup = 9B69603F2C91D3FB00B39295 /* Products */;
 			projectDirPath = "";
@@ -510,6 +514,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9BB2F4B92C98064700F9BD6A /* XCRemoteSwiftPackageReference "gifu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kaishin/gifu";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 3.4.1;
+				minimumVersion = 3.0.0;
+			};
+		};
 		9BC3840D2C92976F00ED96DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -529,6 +542,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9BB2F4BA2C98064700F9BD6A /* Gifu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BB2F4B92C98064700F9BD6A /* XCRemoteSwiftPackageReference "gifu" */;
+			productName = Gifu;
+		};
 		9BC3840E2C92976F00ED96DC /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9BC3840D2C92976F00ED96DC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
